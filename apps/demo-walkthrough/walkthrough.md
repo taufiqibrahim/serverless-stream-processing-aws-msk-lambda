@@ -37,7 +37,7 @@ We also need to create Security Group with inbound access to AWS MSK.
 Let's create our simple JSON topic called `demo-walkthrough-orders` inside AWS MSK cluster. We will use a versatile tool called kafkacat https://github.com/edenhill/kafkacat. Since AWS MSK cluster deployed inside a private VPC, we must invoke the command on a bastion host or accessible EC2 which can access MSK.
 
 ```bash
-kafkacat -P -b <BOOTSTRAP_SERVERS_URLS> -t demo-walkthrough-orders -K: -l orders-data.txt
+kafkacat -P -b <AWS_MSK_BOOTSTRAP_SERVERS_URLS> -t demo-walkthrough-orders -K: -l orders-data.txt
 ```
 
 ## 4 Initialize Stream Processing demo-walkthrough App
