@@ -1,6 +1,8 @@
 # Serverless Stream Processing AWS MSK - Lambda
 Serverless framework based stream processing using Amazon MSK and Amazon Lambda
 
+![image info](./serverless-stream-processing-aws-msk-lambda-architecture.png)
+
 ## Pros & Cons
 This framework has several pros and cons as described below:
 

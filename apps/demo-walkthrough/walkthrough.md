@@ -1,7 +1,7 @@
 # Walkthrough
 
 ## 1 System Design
-TODO
+![image info](./demo-walkthrough-architecture.png)
 
 ## 2 AWS Infrastructure Requirements
 - AWS VPC
