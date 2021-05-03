@@ -274,3 +274,6 @@ cython_debug/
 # Credentials
 env.*.json
 !env.example.json
+
+.requirements.zip
+include
