@@ -1,0 +1,10 @@
+{"OrderNo":"SO-001","OrderDate":"1/6/19","Region":"East","Customer":"Jones","Item":"Pencil","Units":95,"Unit Cost":1.99,"Total":189.05}
+{"OrderNo":"SO-002","OrderDate":"1/23/19","Region":"Central","Customer":"Kivell","Item":"Binder","Units":50,"Unit Cost":19.99,"Total":999.5}
+{"OrderNo":"SO-003","OrderDate":"2/9/19","Region":"Central","Customer":"Jardine","Item":"Pencil","Units":36,"Unit Cost":4.99,"Total":179.64}
+{"OrderNo":"SO-004","OrderDate":"2/26/19","Region":"Central","Customer":"Gill","Item":"Pen","Units":27,"Unit Cost":19.99,"Total":539.73}
+{"OrderNo":"SO-005","OrderDate":"3/15/19","Region":"West","Customer":"Sorvino","Item":"Pencil","Units":56,"Unit Cost":2.99,"Total":167.44}
+{"OrderNo":"SO-006","OrderDate":"4/1/19","Region":"East","Customer":"Jones","Item":"Binder","Units":60,"Unit Cost":4.99,"Total":299.4}
+{"OrderNo":"SO-007","OrderDate":"4/18/19","Region":"Central","Customer":"Andrews","Item":"Pencil","Units":75,"Unit Cost":1.99,"Total":149.25}
+{"OrderNo":"SO-008","OrderDate":"5/5/19","Region":"Central","Customer":"Jardine","Item":"Pencil","Units":90,"Unit Cost":4.99,"Total":449.1}
+{"OrderNo":"SO-009","OrderDate":"5/22/19","Region":"West","Customer":"Thompson","Item":"Pencil","Units":32,"Unit Cost":1.99,"Total":63.68}
+{"OrderNo":"SO-010","OrderDate":"6/8/19","Region":"East","Customer":"Jones","Item":"Binder","Units":60,"Unit Cost":8.99,"Total":539.4}

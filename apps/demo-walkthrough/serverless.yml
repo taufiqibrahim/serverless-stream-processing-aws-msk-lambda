@@ -1,0 +1,47 @@
+service: demo-walkthrough
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+
+  # you can overwrite defaults here
+  stage: ${opt:stage}
+  region: ap-southeast-1
+
+  environment: ${file(./env.${opt:stage}.json)}
+  profile: ${opt:profile, 'serverless'} # The default profile to use with this service
+  memorySize: 1024 # Overwrite the default memory size. Default is 1024
+  timeout: ${file(./env.${opt:stage}.json):AWS_LAMBDA_EXECUTION_TIMEOUT} # The default is 6 seconds. Note: API Gateway current maximum is 30 seconds
+  logRetentionInDays: 14 # Set the default RetentionInDays for a CloudWatch LogGroup
+  deploymentBucket: ${file(./env.${opt:stage}.json):AWS_S3_DEPLOYMENT_BUCKET}
+  iam:
+    role: ${file(./env.${opt:stage}.json):AWS_LAMBDA_EXECUTION_ROLE}
+  lambdaHashingVersion: 20201221
+
+  # you can define network configuration here
+  vpc:
+    securityGroupIds:
+      - ${file(./env.${opt:stage}.json):AWS_VPC_SECURITY_GROUP_ID_1}
+    subnetIds:
+      - ${file(./env.${opt:stage}.json):AWS_VPC_SUBNET_ID_1}
+
+# Python and other things
+custom:
+  startingPosition: ${file(./env.${opt:stage}.json):KAFKA_STARTING_POSITION}
+  pythonRequirements:
+    dockerizePip: non-linux
+    slim: true
+plugins:
+  - serverless-python-requirements
+
+functions:
+  p01OrdersEnrichCustomerLocation:
+    handler: p01OrdersEnrichCustomerLocation.main
+    events:
+      - msk:
+          arn: ${file(./env.${opt:stage}.json):AWS_MSK_CLUSTER_1}
+          topic: ${file(./env.${opt:stage}.json):AWS_MSK_ORDERS_TOPIC}
+          batchSize: ${file(./env.${opt:stage}.json):AWS_LAMBDA_MSK_BATCH_SIZE, 1000}
+          startingPosition: ${self:custom.startingPosition}
+          enabled: true
